@@ -1,0 +1,71 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <h1 class="display-4 text-center">Stations</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card-body">
+      <table class="table table-bordered" style="width: 100%">
+        <tr>
+          <th class="td-fix-10 text-center">
+            Sr
+          </th>
+          <th class="td-fix">
+            Station Name
+          </th>
+          <th class="td-fix">
+            X Co-Ordinate
+          </th>
+          <th class="td-fix">
+            Y Co-Ordinate
+          </th>
+          <th class="td-fix">
+            Fuel Rate
+          </th>
+          <th class="text-center">
+            Action
+          </th>
+        </tr>
+
+        <tr *ngFor="let station of stations; let i = index;">
+          <td class="td-fix-10 text-center">{{i+1}}</td>
+          <td class="text-center">{{station.station_name}}</td>
+          <td class="text-center">{{station.x_coordinate}}</td>
+          <td class="text-center">{{station.y_coordinate}}</td>
+          <td class="td-fix text-center">
+            <div *ngIf="!station.isEdit">
+              {{station.fuel_price}} Rs
+            </div>
+
+            <div *ngIf="station.isEdit" class="pad-5">
+              <input type="number" class="form-control" name="name" [(ngModel)]="station.fuel_price" />
+            </div>
+          </td>
+          <td>
+            <div class="row" *ngIf="!station.isEdit">
+              <div class="col-md-6 text-right">
+                <i class="fa fa-pencil-alt cursor font-20 text-primary" role="button" (click)="getStationById(station)" aria-hidden="true"></i>
+              </div>
+              <div class="col-md-6">
+                <i class="fa fa-trash cursor font-20 text-danger" role="button" (click)="deleteStation(station)" aria-hidden="true"></i>
+              </div>
+            </div>
+
+            <div class="row" *ngIf="station.isEdit">
+              <div class="col-md-6 text-right">
+                <i class="fa fa-check cursor font-20 text-success" role="button" (click)="updateStation(station)" aria-hidden="true"></i>
+              </div>
+              <div class="col-md-6">
+                <i class="fa fa-times cursor font-20 text-danger" role="button" (click)="closeEdit(station)" aria-hidden="true"></i>
+              </div>
+            </div>
+
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <a class="btn btn-primary btn-lg" routerLink="/add" role="button">Add New Station</a>
+</div>

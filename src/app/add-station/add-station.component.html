@@ -1,0 +1,63 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col">
+      <h1 class="display-4 text-center">Add a Station</h1>
+    </div>
+  </div>
+
+
+
+  <div class="row mt-5">
+    <div class="col-6 ml-5">
+      <!--  display error message here-->
+      <div class="alert alert-danger" role="alert" *ngIf="error">
+        Error: {{error}}
+      </div>
+
+      <!--  display success message-->
+      <div class="alert alert-success" role="alert" *ngIf="success">
+        {{success}}
+      </div>
+
+      <form name="stationForm" #stationForm="ngForm" (ngSubmit)="onSubmit(stationForm.value)">
+        <!--        for station name-->
+        <div class="form-group">
+          <label for="station_name" class="control-label">Station Name</label>
+          <input type="text" class="form-control"
+                  pattern="[A-Za-z\s]+"
+                 id="station_name" placeholder="Enter fuel station name"
+                 name="station_name" ngModel required>
+        </div>
+
+        <!--        for x coordinates-->
+        <div class="form-group">
+          <label for="x_coordinate" class="control-label">X Coordinate</label>
+          <input type="number" class="form-control"
+                 id="x_coordinate" placeholder="Enter x coordinate"
+                 name="x_coordinate" ngModel required>
+        </div>
+
+        <!--        for y coordinates-->
+        <div class="form-group">
+          <label for="y_coordinate" class="control-label">Y Coordinate</label>
+          <input type="number" class="form-control"
+                 id="y_coordinate" placeholder="Enter y coordinate"
+                 name="y_coordinate" ngModel required>
+        </div>
+
+        <!--        for fuel price-->
+        <div class="form-group">
+          <label for="fuel_price" class="control-label">Fuel Price</label>
+          <input type="number" class="form-control"
+                 id="fuel_price" placeholder="Enter y coordinate"
+                 name="fuel_price" ngModel required>
+        </div>
+
+        <button type="submit" class="btn btn-primary"
+                [disabled]="!stationForm.valid">Add Station</button>
+      </form>
+    </div>
+
+    <div class="col-6"></div>
+  </div>
+</div>
