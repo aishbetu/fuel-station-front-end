@@ -10,6 +10,7 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { FindStationsComponent } from './find-stations/find-stations.component';
 import { ViewStationsComponent } from './view-stations/view-stations.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ViewStationsComponent } from './view-stations/view-stations.component';
     HeaderComponent,
     AddStationComponent,
     FindStationsComponent,
-    ViewStationsComponent
+    ViewStationsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

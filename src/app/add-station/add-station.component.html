@@ -1,4 +1,4 @@
-<div class="container-fluid mt-4">
+<div class="container mt-4" style="height: 768px;">
   <div class="row">
     <div class="col">
       <h1 class="display-4 text-center">Add a Station</h1>
@@ -8,7 +8,7 @@
 
 
   <div class="row mt-5">
-    <div class="col-6 ml-5">
+    <div class="col-6">
       <!--  display error message here-->
       <div class="alert alert-danger" role="alert" *ngIf="error">
         Error: {{error}}
@@ -33,7 +33,7 @@
         <div class="form-group">
           <label for="x_coordinate" class="control-label">X Coordinate</label>
           <input type="number" class="form-control"
-                 id="x_coordinate" placeholder="Enter x coordinate"
+                 id="x_coordinate" placeholder="Enter longitude"
                  name="x_coordinate" ngModel required>
         </div>
 
@@ -41,7 +41,7 @@
         <div class="form-group">
           <label for="y_coordinate" class="control-label">Y Coordinate</label>
           <input type="number" class="form-control"
-                 id="y_coordinate" placeholder="Enter y coordinate"
+                 id="y_coordinate" placeholder="Enter latitude"
                  name="y_coordinate" ngModel required>
         </div>
 
@@ -55,9 +55,13 @@
 
         <button type="submit" class="btn btn-primary"
                 [disabled]="!stationForm.valid">Add Station</button>
+
+        <a class="btn btn-primary m-3" routerLink="/" role="button">Back</a>
       </form>
     </div>
 
-    <div class="col-6"></div>
+    <div class="col-6">
+      <img src="https://www.pinclipart.com/picdir/big/96-960496_world-map-cliparts.png" width="700" />
+    </div>
   </div>
 </div>

@@ -1,9 +1,14 @@
-<div class="container-fluid mt-5">
+<div class="container-fluid mt-5 mb-5" style="height: 768px;">
   <div class="row">
     <div class="col">
       <h1 class="display-4 text-center">Find Nearby Fuel Stations</h1>
       <p class="lead text-center">Enter your coordinates to get top 3 nearest fuel stations</p>
     </div>
+  </div>
+
+  <!--  display error message here-->
+  <div class="alert alert-danger" role="alert" *ngIf="error">
+    Error: {{error}}
   </div>
 
   <div class="row mt-5">
@@ -15,7 +20,7 @@
           <div class="col-md-4">
             <label for="x_coordinate" class="control-label">X Coordinate</label>
             <input type="number" class="form-control"
-                   id="x_coordinate" placeholder="Enter x coordinate"
+                   id="x_coordinate" placeholder="Enter longitude"
                    name="x_coordinate" ngModel required>
 
           </div>
@@ -23,7 +28,7 @@
           <div class="col-md-4">
             <label for="y_coordinate" class="control-label">Y Coordinate</label>
             <input type="number" class="form-control"
-                   id="y_coordinate" placeholder="Enter y coordinate"
+                   id="y_coordinate" placeholder="Enter latitude"
                    name="y_coordinate" ngModel required>
           </div>
 
@@ -41,12 +46,12 @@
     </div>
     <div class="col-lg-8 mx-auto">
 
-      <!-- List group-->
+
       <ul class="list-group shadow">
 
-        <!-- list group item-->
+
         <li class="list-group-item" *ngFor="let nearestStation of nearestStations">
-          <!-- Custom content-->
+
           <div class="media align-items-lg-center flex-column flex-lg-row p-3">
             <div class="media-body text-center">
               <h5 class="mt-0 font-weight-bold mb-2">Station Name</h5>
@@ -62,36 +67,11 @@
 
           </div>
 
-          <!-- End -->
         </li>
-        <!-- End -->
       </ul>
-      <!-- End -->
     </div>
   </div>
 
-<!--  <div class="row pt-5">-->
-<!--    <div class="col-md-2"></div>-->
-
-<!--    <div class="col-md-8">-->
-<!--      <table class="table">-->
-<!--        <thead class="thead-light">-->
-<!--        <tr>-->
-<!--          <th class="text-center" scope="col">Station Name</th>-->
-<!--          <th class="text-center" scope="col">Distance</th>-->
-<!--        </tr>-->
-<!--        </thead>-->
-<!--        <tbody>-->
-<!--        <tr *ngFor="let nearestStation of nearestStations">-->
-<!--          <td class="text-center">{{nearestStation.station_name}}</td>-->
-<!--          <td class="text-center">{{nearestStation.distance}}</td>-->
-<!--        </tr>-->
-<!--        </tbody>-->
-<!--      </table>-->
-<!--    </div>-->
-
-<!--    <div class="col-md-2"></div>-->
-<!--  </div>-->
 
 
 </div>

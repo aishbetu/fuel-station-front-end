@@ -1,9 +1,30 @@
-<div class="container mt-4">
+<div class="container mt-4 mb-3">
   <div class="row">
     <div class="col">
       <h1 class="display-4 text-center">Stations</h1>
     </div>
   </div>
+
+  <!--  display error message here-->
+  <div class="row mt-3" *ngIf="error">
+    <div class="col">
+      <div class="alert alert-danger text-center" role="alert">
+        <h5>{{error}}</h5>
+      </div>
+    </div>
+  </div>
+
+  <!--  display success message here-->
+  <div class="row mt-3" *ngIf="success">
+    <div class="col">
+      <div class="alert alert-success text-center" role="alert">
+        <h5>{{success}}</h5>
+      </div>
+    </div>
+  </div>
+
+
+
 
   <div class="row">
     <div class="card-body">
@@ -67,5 +88,5 @@
       </table>
     </div>
   </div>
-  <a class="btn btn-primary btn-lg" routerLink="/add" role="button">Add New Station</a>
+  <a class="btn btn-primary" routerLink="/add" role="button">Add New Station</a>
 </div>

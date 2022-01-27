@@ -1,3 +1,47 @@
+# Fuel Station
+## FrontEnd Application in Angular
+
+
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+
+Fuel Station front app is built with angular that connects nodejs rest api ,
+## The functionalities of this app are:
+
+- Add new Fuel Sttaions
+- View All Stations
+- Update Fuel Price
+- Delete Fuel Station
+- Find top 3 nearby fuel station to user location
+
+## Installation
+
+Fuel Station requires [Angular](https://angular.io/) v12+ to run.
+
+Install the dependencies and start the server.
+
+```sh
+cd fuel-station-front-end
+npm i
+```
+
+
+## Steps to run this project
+
+- Check whether npm folder has been created or not.
+- Run command ``` "ng serve"```
+- Visit http://localhost:4200/ from your browser.
+
+
+
+
+## License
+
+MIT
+
+
+
+
+
 # FuelStationApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.

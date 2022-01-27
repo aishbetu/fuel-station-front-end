@@ -10,6 +10,7 @@ import {FuelServiceService} from "../fuel-service.service";
 export class FindStationsComponent implements OnInit {
   nearestStations = [];
   isSuccess = false;
+  error = null;
   constructor(private fuelStationService: FuelServiceService) { }
 
   ngOnInit(): void {
@@ -28,6 +29,10 @@ export class FindStationsComponent implements OnInit {
     }, (err) => {
       console.log('error occurred');
       console.log(err.error.message);
+      this.error = err.error.message;
+      setTimeout(() => {
+        this.error = null;
+      }, 3000);
     })
   }
 

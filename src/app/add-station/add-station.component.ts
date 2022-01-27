@@ -23,12 +23,18 @@ export class AddStationComponent implements OnInit {
       console.log("Success")
       console.log('JSON Response = ', data);
       this.success = 'Station has been added successfully'
+      setTimeout(() => {
+        this.success = null;
+      }, 2000);
       this.stationForm.reset();
     }, err => {
       console.log('error occurred');
       console.log(err.error.message);
       this.error = err.error.message;
-      this.stationForm.reset();
+      setTimeout(() => {
+        this.error = null;
+      }, 3000);
+      // this.stationForm.reset();
     });
 
   }
